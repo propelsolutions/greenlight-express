@@ -3254,6 +3254,25 @@ a.terminal-window__tab-label:hover {
   color: var(--grey-500);
 }
 
+.contact-honey {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.contact-success {
+  padding: 12px 16px;
+  border: 1px solid var(--primary-main);
+  border-radius: 8px;
+  background: rgba(16, 128, 88, 0.08);
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 140%;
+}
+
 .precision-copy > p:not(.p-24) {
   font-size: 16px;
   line-height: 150%;

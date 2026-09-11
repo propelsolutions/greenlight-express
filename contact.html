@@ -13,7 +13,7 @@
       content="contact, Greenlight Express, logistics, courier"
     >
 
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
     <link rel="stylesheet" href="fonts.css">
     <link rel="icon" href="favicon/favicon-32x32.png">
 
@@ -110,7 +110,20 @@
       <div class="w-1020 b-both px-3xl py-3xl flex-v a-items-center">
         <div class="flex-v gap-lg text-pretty max-w-440 w-full">
           <h2 class="ff-mozilla font-w-500">Get in Touch</h2>
-          <form class="contact-form flex-v gap-md" action="#" method="post">
+          <p id="form-success" class="contact-success" hidden>
+            Thanks — we received your message and will get back to you soon.
+          </p>
+          <form
+            id="contact-form"
+            class="contact-form flex-v gap-md"
+            action="https://formsubmit.co/greenlightexpress101@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New inquiry — Greenlight Express LLC">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://propelsolutions.github.io/greenlight-express/contact.html?sent=1">
+            <input type="text" name="_honey" class="contact-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
             <div class="flex-v gap-xs">
               <label for="first-name">First name</label>
               <input type="text" id="first-name" name="first-name" autocomplete="given-name" required>
@@ -196,6 +209,12 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
+    if (new URLSearchParams(window.location.search).get("sent") === "1") {
+      var success = document.getElementById("form-success");
+      var form = document.getElementById("contact-form");
+      if (success) success.hidden = false;
+      if (form) form.hidden = true;
+    }
   </script>
   <script src="script.js"></script>
 </body>

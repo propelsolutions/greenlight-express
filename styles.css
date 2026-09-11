@@ -1,7 +1,7 @@
 :root {
-  --primary-main: #f2994a;
-  --primary-light: #efaa6d;
-  --primary-dark: #d68742;
+  --primary-main: #108058;
+  --primary-light: #1a9a6c;
+  --primary-dark: #0c6546;
   --primary-contrastText: #ffffff;
 
   --secondary-main: #2f80ed;
@@ -62,6 +62,7 @@ nav {
   transition: all 0.4s ease-in-out;
   box-shadow: 0px -1px 0px 0px var(--grey-300) inset;
   background-color: var(--grey-50);
+  overflow: hidden;
 }
 
 p {
@@ -378,7 +379,7 @@ section#roadmap-overview > .w-1020.b-both {
 }
 .w-20px { width: 20px; }
 .w-100px { width: 100px; }
-.w-140px { width: 140px; }
+.w-140px { width: 140px; height: auto; max-height: 40px; object-fit: contain; }
 .ml-34 { margin-left: 34px; }
 .card-auto { height: auto; width: auto; }
 .img-60pc { width: 60%; }
@@ -943,6 +944,17 @@ nav a {
 
 .logo {
   position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+  max-width: 180px;
+  display: block;
+  object-fit: contain;
 }
 
 .context-menu {
@@ -1154,6 +1166,7 @@ section.white {
 
 section.dark {
   background-color: var(--dark);
+  color: var(--grey-100);
 }
 
 section#roadmap-overview {
@@ -1218,7 +1231,7 @@ section.grey {
 }
 
 .card.orange {
-  background: linear-gradient(to bottom, #F2994A, #F57937);
+  background: linear-gradient(to bottom, var(--primary-main), var(--primary-dark));
   color: var(--primary-contrastText);
 }
 
@@ -1229,7 +1242,7 @@ section.grey {
 }
 
 .card.orange:hover {
-  box-shadow: rgba(242, 153, 74, 0.35) 0px 8px 24px 0px;
+  box-shadow: rgba(16, 128, 88, 0.35) 0px 8px 24px 0px;
 }
 
 .roadmap-cards {
@@ -1374,7 +1387,7 @@ section.grey {
 }
 
 .gradient {
-  background: linear-gradient(to left, #F8BA84, #F58937);
+  background: linear-gradient(to left, var(--primary-light), var(--primary-dark));
   height: 40px;
   opacity: 0.6;
 }
@@ -1631,9 +1644,23 @@ h4 {
 
 .playground-container img {
   width: 100%;
+  height: auto;
+  display: block;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
   border: 1px solid var(--grey-300);
   border-radius: 6px;
   overflow: hidden;
+}
+
+.footer-logo-xl {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
 }
 
 
@@ -2666,14 +2693,16 @@ h4 {
   }
 }
 
-/* Button-styled anchor tags */
-a.button {
+/* Button-styled anchor tags and form buttons */
+a.button,
+button.button {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 4px;
   font-size: 14px;
+  font-family: inherit;
   background: var(--primary-main);
   color: var(--primary-contrastText);
   border: none;
@@ -2689,7 +2718,8 @@ a.button {
   border: 1px solid var(--primary-dark);
 }
 
-a.button:hover {
+a.button:hover,
+button.button:hover {
   background: var(--primary-dark);
   text-decoration: none;
 }
@@ -3096,4 +3126,34 @@ a.terminal-window__tab-label:hover {
 
 .page-404-title {
   font-size: 2rem;
+}
+
+/* Contact form */
+.contact-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.contact-form input {
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--grey-300);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--dark);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus {
+  outline: 2px solid var(--primary-main);
+  outline-offset: 1px;
+  border-color: var(--primary-main);
+}
+
+.contact-form input::placeholder {
+  color: var(--grey-500);
 }

@@ -3193,6 +3193,11 @@ a.terminal-window__tab-label:hover {
   max-width: 36em;
 }
 
+#benefits,
+#services {
+  scroll-margin-top: 80px;
+}
+
 /* Greenlight mobile / tablet layout */
 @media only screen and (max-width: 800px) {
   .w-1020.flex-h.a-items-stretch.b-both {

@@ -14,7 +14,9 @@
     >
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="preload" href="images/hero.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="fonts/inter-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css?v=15">
     <link rel="stylesheet" href="fonts.css">
 
     <!-- Favicon -->
@@ -33,7 +35,10 @@
       <div class="nav-container b-both">
         <div class="logo w-200">
           <a href="index.html" id="logo-link">
-            <img src="images/logo.png" alt="Greenlight Express LLC">
+            <picture>
+              <source srcset="images/logo.webp" type="image/webp">
+              <img src="images/logo.png" alt="Greenlight Express LLC" width="180" height="44" decoding="async">
+            </picture>
           </a>
         </div>
         <ul>
@@ -46,8 +51,8 @@
           <a href="contact.html" class="button" id="join-waitlist-top">Contact Us</a>
 
           <button type="button" id="menu-button" class="big-icon" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-            <i data-lucide="menu" class="menu-icon" aria-hidden="true"></i>
-            <i data-lucide="x" class="close-icon" aria-hidden="true"></i>
+            <svg class="menu-icon lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+            <svg class="close-icon lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </button>
         </div>
       </div>
@@ -72,16 +77,23 @@
       </div>
     </div>
 
-    <a href="#body" id="scroll-up" class="hidden back-to-top" aria-label="Back to top"><i data-lucide="arrow-up" aria-hidden="true"></i></a>
+    <a href="#body" id="scroll-up" class="hidden back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
 
     <header>
       <div class="w-1020 b-both hero-shell">
         <div class="hero hero-combined">
-          <img
-            class="hero-bg"
-            src="images/hero.jpg?v=11"
-            alt="Logistics truck in warehouse"
-          >
+          <picture>
+            <source srcset="images/hero.webp" type="image/webp">
+            <img
+              class="hero-bg"
+              src="images/hero.jpg"
+              alt="Logistics truck in warehouse"
+              width="1600"
+              height="896"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </picture>
           <div class="hero-text">
             <h1 class="ff-mozilla font-w-700">GREENLIGHT EXPRESS LLC</h1>
             <h2 class="text-pretty">
@@ -170,7 +182,10 @@
           <p>We deliver logistics excellence with a focus on reliability and speed. Our team ensures every courier shipment reaches its destination with precision, providing the supply chain solutions your business demands.</p>
           <a href="contact.html" class="button fit-content">Get in Touch</a>
         </div>
-        <img class="max-w-440" src="images/precision.jpg?v=11" alt="Precision delivery">
+        <picture>
+          <source srcset="images/precision.webp" type="image/webp">
+          <img class="max-w-440" src="images/precision.jpg" alt="Precision delivery" width="1200" height="525" loading="lazy" decoding="async">
+        </picture>
       </div>
     </section>
 
@@ -247,7 +262,10 @@
         <div class="flex-v gap-2xl" id="footer-logo">
           <div class="flex-v gap-xs">
             <a href="index.html" aria-label="Greenlight Express home">
-              <img src="images/logo.png" class="w-140px" alt="Greenlight Express LLC">
+              <picture>
+              <source srcset="images/logo.webp" type="image/webp">
+              <img src="images/logo.png" class="w-140px" alt="Greenlight Express LLC" width="180" height="44" decoding="async" loading="lazy">
+            </picture>
             </a>
             <p class="grey-500 p-16 font-w-400 ml-34">
               Reliable logistics<br>and courier delivery
@@ -280,7 +298,10 @@
     </div>
 
     <div class="w-1020 b-both footer-logo-xl-wrap">
-      <img class="footer-logo-xl block-w-full" src="images/logo.png" alt="Greenlight Express LLC">
+      <picture>
+      <source srcset="images/logo.webp" type="image/webp">
+      <img class="footer-logo-xl block-w-full" src="images/logo.png" alt="Greenlight Express LLC" width="1019" height="250" loading="lazy" decoding="async">
+    </picture>
     </div>
 
     <div class="h-divider"></div>
@@ -298,10 +319,6 @@
 
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons();
-  </script>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

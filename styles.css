@@ -961,6 +961,11 @@ nav a {
   object-fit: contain;
 }
 
+.logo picture {
+  display: block;
+  line-height: 0;
+}
+
 .context-menu {
   display: none;
   position: fixed;
@@ -1133,6 +1138,12 @@ header.no-bg {
   align-items: flex-start;
   justify-content: flex-end;
   overflow: hidden;
+}
+
+.hero-combined picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .hero-shell {

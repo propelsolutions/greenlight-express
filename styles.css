@@ -3307,6 +3307,23 @@ button.button:disabled {
   max-width: 36em;
 }
 
+.precision-media {
+  flex: 0 1 440px;
+  max-width: min(440px, 100%);
+  width: 100%;
+  line-height: 0;
+  align-self: center;
+}
+
+.precision-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
 #benefits,
 #services {
   scroll-margin-top: 80px;
@@ -3338,9 +3355,16 @@ button.button:disabled {
     gap: 24px;
   }
 
+  section.o-hidden > .w-1020.flex-h .precision-media,
   section.o-hidden > .w-1020.flex-h .max-w-440 {
+    flex: 1 1 auto;
     width: 100%;
     max-width: 100%;
+  }
+
+  section.o-hidden > .w-1020.flex-h .precision-media img,
+  section.o-hidden > .w-1020.flex-h .max-w-440 {
+    width: 100%;
     height: auto;
   }
 

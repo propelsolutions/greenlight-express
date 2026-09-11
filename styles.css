@@ -3273,6 +3273,21 @@ a.terminal-window__tab-label:hover {
   line-height: 140%;
 }
 
+.contact-error {
+  padding: 12px 16px;
+  border: 1px solid #c62828;
+  border-radius: 8px;
+  background: rgba(198, 40, 40, 0.08);
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 140%;
+}
+
+button.button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
 .precision-copy > p:not(.p-24) {
   font-size: 16px;
   line-height: 150%;

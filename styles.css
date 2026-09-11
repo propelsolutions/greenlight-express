@@ -1127,11 +1127,17 @@ header.no-bg {
 .hero-combined {
   position: relative;
   width: 100%;
-  min-height: min(78vh, 680px);
+  min-height: min(70vh, 560px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-shell {
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
 }
 
@@ -1161,16 +1167,17 @@ header.no-bg {
 .hero-combined .hero-text {
   position: relative;
   z-index: 2;
-  width: var(--container-margin);
-  max-width: var(--container-margin);
-  margin: 0 auto;
-  padding: 64px 40px 72px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 48px 40px 56px;
   color: #fff;
+  box-sizing: border-box;
 }
 
 .hero-combined .hero-text h1 {
   color: var(--primary-main);
-  font-size: clamp(36px, 5.5vw, 64px);
+  font-size: clamp(28px, 4.5vw, 52px);
   font-weight: 700;
   line-height: 110%;
   white-space: nowrap;
@@ -3322,11 +3329,11 @@ a.terminal-window__tab-label:hover {
 
 @media only screen and (max-width: 580px) {
   .hero-combined {
-    min-height: min(70vh, 560px);
+    min-height: min(56vh, 420px);
   }
 
   .hero-combined .hero-text {
-    padding: 40px 24px 48px;
+    padding: 28px 16px 32px;
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -3334,13 +3341,13 @@ a.terminal-window__tab-label:hover {
   }
 
   .hero-combined .hero-text h1 {
-    font-size: clamp(22px, 7vw, 36px);
+    font-size: clamp(20px, 6.5vw, 32px);
     line-height: 110%;
     white-space: normal;
   }
 
   .hero-combined .hero-text h2 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .hero-text {

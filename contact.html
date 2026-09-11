@@ -220,9 +220,30 @@
       var submitBtn = document.getElementById("contact-submit");
       if (!form) return;
 
+      function resetButton() {
+        if (!submitBtn) return;
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+      }
+
+      function showSuccess() {
+        form.reset();
+        form.style.display = "none";
+        form.setAttribute("hidden", "");
+        if (success) {
+          success.hidden = false;
+          success.style.display = "block";
+        }
+        if (error) error.hidden = true;
+        resetButton();
+      }
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (error) error.hidden = true;
+        if (error) {
+          error.hidden = true;
+          error.style.display = "none";
+        }
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent = "Sending…";
@@ -235,18 +256,18 @@
         })
           .then(function (res) {
             if (!res.ok) throw new Error("Request failed");
-            return res.json();
+            // FormSubmit may return empty/non-JSON; email can still succeed
+            return res.text().catch(function () { return ""; });
           })
           .then(function () {
-            form.hidden = true;
-            if (success) success.hidden = false;
+            showSuccess();
           })
           .catch(function () {
-            if (error) error.hidden = false;
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = "Submit";
+            if (error) {
+              error.hidden = false;
+              error.style.display = "block";
             }
+            resetButton();
           });
       });
     })();

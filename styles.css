@@ -3185,6 +3185,14 @@ a.terminal-window__tab-label:hover {
   color: var(--grey-500);
 }
 
+.precision-copy > p:not(.p-24) {
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  max-width: 36em;
+}
+
 /* Greenlight mobile / tablet layout */
 @media only screen and (max-width: 800px) {
   .w-1020.flex-h.a-items-stretch.b-both {
@@ -3215,6 +3223,24 @@ a.terminal-window__tab-label:hover {
     width: 100%;
     max-width: 100%;
     height: auto;
+  }
+
+  .precision-copy {
+    padding: 32px 16px;
+  }
+
+  .precision-copy .p-24 {
+    font-size: 16px;
+  }
+
+  .precision-copy h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .precision-copy > p:not(.p-24) {
+    font-size: 15px;
+    line-height: 150%;
+    font-family: Inter, sans-serif;
   }
 
   .empty-container-120 {
